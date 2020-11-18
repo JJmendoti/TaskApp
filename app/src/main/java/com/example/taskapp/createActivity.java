@@ -25,7 +25,7 @@ public class createActivity extends BaseActivity {
         setSupportActionBar(toolbar);
         super.init();
         init();
-        fab_clear.setOnClickListener(new View.OnClickListener() {
+        fab_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 goToList();
@@ -47,5 +47,13 @@ public class createActivity extends BaseActivity {
         fab_create = findViewById(R.id.fab_create);
         et_create_title = findViewById(R.id.et_create_title);
         et_create_description = findViewById(R.id.et_create_description);
+    }
+
+    private  void clear(){
+        et_create_title.setText("");
+        et_create_description.setText("");
+
+        et_create_title.requestFocus();
+        
     }
 }
