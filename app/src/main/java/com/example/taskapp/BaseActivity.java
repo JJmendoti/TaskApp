@@ -46,11 +46,11 @@ public class BaseActivity extends AppCompatActivity {
         collectionReference = db.collection(COLLECTION_NAME);
     }
 
-    protected  void maleSimpleToast(String message, int duration){
+    protected  void makeSimpleToast(String message, int duration){
         Toast.makeText(this, message, duration).show();
     }
 
-    protected  void maleSimpleAlertDialog(String title, String message){
+    protected  void makeSimpleAlertDialog(String title, String message){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(message);
         builder.setTitle(title);
@@ -68,7 +68,7 @@ public class BaseActivity extends AppCompatActivity {
         startActivity(intent);
     }
     protected void goToCreate(){
-        Intent intent = new Intent(this,BaseActivity.class);
+        Intent intent = new Intent(this,createActivity.class);
         startActivity(intent);
     }
     protected void goToEdit(){

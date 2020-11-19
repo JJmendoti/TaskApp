@@ -2,9 +2,14 @@ package com.example.taskapp;
 
 import android.os.Bundle;
 
+import com.example.taskapp.models.TasksModel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.firestore.DocumentReference;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -25,20 +30,60 @@ public class createActivity extends BaseActivity {
         setSupportActionBar(toolbar);
         super.init();
         init();
+
         fab_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 goToList();
             }
         });
+        fab_clear.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View view) { clear(); }});
 
-        fab_clear.setOnClickListener(new View.OnClickListener() {
+        fab_create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                String title, descripcion;
+                boolean active;
+
+                title = et_create_title.getText().toString();
+                descripcion = et_create_description.getText().toString();
+
+                if (title.isEmpty() || descripcion.isEmpty()){
+                    makeSimpleAlertDialog("Info", "Por favor debe llenar todos los campos");
+                }else{
+                    model = new TasksModel();
+                    model.setActive(true);
+                    model.setDescripcion(descripcion);
+                    model.setTitulo(title);
+
+                    save(model);
+                }
             }
         });
+    }
+
+    private void save(TasksModel model) {
+        if (collectionReference !=null){
+            collectionReference.add(model)
+            .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentReference> task) {
+                    if (task.isSuccessful()){
+                        if (task.getResult() !=null){
+                            makeSimpleAlertDialog("Success", "Taks Guardada");
+                            clear();
+                        }else {
+                            makeSimpleAlertDialog("Warning", "Taks no guardada");
+                        }
+
+                    }else{
+                        makeSimpleAlertDialog("Error", task.getException().getMessage());
+                    }
+                }
+            });
+        }else {
+            makeSimpleAlertDialog("Error", "No hay conexión con la DB");
+        }
     }
 
     protected void init(){
@@ -50,10 +95,10 @@ public class createActivity extends BaseActivity {
     }
 
     private  void clear(){
-        et_create_title.setText("");
-        et_create_description.setText("");
+   et_create_description.setText("");
+   et_create_title.setText("");
 
-        et_create_title.requestFocus();
+   et_create_title.requestFocus();
         
     }
 }
