@@ -40,6 +40,7 @@ public class ListActivity extends BaseActivity {
                 goToCreate();
             }
         });
+
         lv_list_taks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
