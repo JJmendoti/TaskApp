@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -37,6 +38,13 @@ public class ListActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 goToCreate();
+            }
+        });
+        lv_list_taks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                model = modelArrayList.get(position);
+                makeSimpleAlertDialog("Abriendo", "Task de Title -> " + model.getTitulo());
             }
         });
 
