@@ -9,8 +9,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.widget.ListView;
 
-public class ListActivity extends AppCompatActivity {
+public class ListActivity extends BaseActivity {
+    private  FloatingActionButton fab_list_create;
+    private ListView lv_list_taks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,14 +21,17 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        super.init();
+        init();
+        fab_list_create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                goToCreate();
             }
         });
+    }
+    protected void init(){
+        fab_list_create = findViewById(R.id.fab_list_create);
+        lv_list_taks = findViewById(R.id.lv_list_taks);
     }
 }

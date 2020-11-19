@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.taskapp.adapters.TasksAdapter;
 import com.example.taskapp.connection.TaskConnection;
 import com.example.taskapp.models.TasksModel;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,7 +22,7 @@ public class BaseActivity extends AppCompatActivity {
 
     protected TasksModel model;
     protected ArrayList<TasksModel> modelArrayList;
-   // protected TasksAdapter adapter;
+    protected TasksAdapter adapter;
 
     protected FirebaseFirestore db;
     protected FirebaseAuth mAuth;
@@ -63,8 +64,9 @@ public class BaseActivity extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
     protected void goToList(){
-        Intent intent = new Intent(this,BaseActivity.class);
+        Intent intent = new Intent(this,ListActivity.class);
         startActivity(intent);
     }
     protected void goToCreate(){
