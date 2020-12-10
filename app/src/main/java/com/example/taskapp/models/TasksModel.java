@@ -1,6 +1,8 @@
 package com.example.taskapp.models;
 
-public class TasksModel {
+import java.io.Serializable;
+
+public class TasksModel implements Serializable {
     private String id;
     private String titulo;
     private String descripcion;

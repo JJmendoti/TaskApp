@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.widget.Toast;
 
 import com.example.taskapp.adapters.TasksAdapter;
@@ -87,7 +86,7 @@ public class BaseActivity extends AppCompatActivity {
 
     protected void goToDetails( TasksModel model){
         Intent intent = new Intent(this, DetailActivity.class);
-        intent.putExtra("model", "model")  ;
+        intent.putExtra("model" , model)  ;
         startActivity(intent);
     }
 }

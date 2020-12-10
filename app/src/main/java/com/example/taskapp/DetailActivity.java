@@ -24,7 +24,7 @@ public class DetailActivity extends BaseActivity {
         init();
 
 
-        model = getIntent().getParcelableExtra("model");
+        model = (TasksModel) getIntent().getSerializableExtra("model");
         if (model!=null){
             makeSimpleAlertDialog("Succcess", "Model: " + model.getTitulo());
 

@@ -47,6 +47,7 @@ public class ListActivity extends BaseActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 model = modelArrayList.get(position);
                 makeSimpleAlertDialog("Abriendo", "Title Task : " + model.getTitulo());
+                goToDetails(model);
             }
         });
 
