@@ -31,18 +31,28 @@ public class ListActivity extends BaseActivity {
         setContentView(R.layout.activity_list);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         super.init();
         init();
 
-
-        fab_list_create.setOnClickListener((view -> {goToCreate();}));
-
-        lv_list_taks.setOnItemClickListener((parent, view, position, id)->{
-            model = modelArrayList.get(position);
-            makeSimpleAlertDialog("Abriendo", "Task : " + model.getTitulo());
-            goToDetails(model);
+        fab_list_create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToCreate();
+            }
         });
+
+        lv_list_taks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                model = modelArrayList.get(position);
+                makeSimpleAlertDialog("Abriendo", "Title Task : " + model.getTitulo());
+            }
+        });
+
     }
+
+
 
     protected void init(){
         fab_list_create = findViewById(R.id.fab_list_create);
