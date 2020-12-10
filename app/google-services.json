@@ -1,34 +1,62 @@
 {
   "project_info": {
-    "project_number": "427673235786",
-    "firebase_url": "https://tasksapp-1217a.firebaseio.com",
-    "project_id": "tasksapp-1217a",
-    "storage_bucket": "tasksapp-1217a.appspot.com"
+    "project_number": "343632208559",
+    "project_id": "taskapp-91dcd",
+    "storage_bucket": "taskapp-91dcd.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:427673235786:android:99665dd90f2c45564a51b3",
+        "mobilesdk_app_id": "1:343632208559:android:c1433cfaee1dc4edf2ea5a",
         "android_client_info": {
-          "package_name": "com.example.taskapp"
+          "package_name": "com.example.mytaskapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "427673235786-9jpq35p0nggh4j3rglfkdst0u1mq5fdm.apps.googleusercontent.com",
+          "client_id": "343632208559-r6k0h1tqh3ucer5ba3eqraafbubi0jur.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDn_0gAmdtG69UrpDZrkeTPKuzuNeWzXVg"
+          "current_key": "AIzaSyADmDWkEcpVE8ibr_if1-frihPzlXAZPtI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "427673235786-9jpq35p0nggh4j3rglfkdst0u1mq5fdm.apps.googleusercontent.com",
+              "client_id": "343632208559-r6k0h1tqh3ucer5ba3eqraafbubi0jur.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343632208559:android:73044aeb4341297cf2ea5a",
+        "android_client_info": {
+          "package_name": "com.example.taskapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "343632208559-r6k0h1tqh3ucer5ba3eqraafbubi0jur.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADmDWkEcpVE8ibr_if1-frihPzlXAZPtI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343632208559-r6k0h1tqh3ucer5ba3eqraafbubi0jur.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

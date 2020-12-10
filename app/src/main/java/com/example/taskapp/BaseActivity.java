@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.widget.Toast;
 
 import com.example.taskapp.adapters.TasksAdapter;
@@ -16,6 +17,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class BaseActivity extends AppCompatActivity {
@@ -82,8 +84,10 @@ public class BaseActivity extends AppCompatActivity {
         Intent intent = new Intent(this,BaseActivity.class);
         startActivity(intent);
     }
-    protected void goToDetails(){
-        Intent intent = new Intent(this,BaseActivity.class);
+
+    protected void goToDetails( TasksModel model){
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra("model", "model")  ;
         startActivity(intent);
     }
 }

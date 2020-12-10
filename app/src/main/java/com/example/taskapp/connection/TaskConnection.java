@@ -4,6 +4,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class TaskConnection {
+
     private static FirebaseAuth mAuth;
 
     private static FirebaseFirestore db;
@@ -15,7 +16,7 @@ public class TaskConnection {
     }
 
     public  static FirebaseFirestore connectionFirestore(){
-        // Initialize Firebase Auth
+        // Initialize Firebase Firestore
         return  db = FirebaseFirestore.getInstance();
     }
 }
